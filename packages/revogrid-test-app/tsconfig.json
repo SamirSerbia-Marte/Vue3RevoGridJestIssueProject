@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfigs/tsconfig.mjs.json",
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "incremental": false,
+    "baseUrl": ".",
+    "resolveJsonModule": true,
+    "paths": {
+      "@/*": ["src/*", "__tests__/*"]
+    },
+    "experimentalDecorators": true
+  },
+  "include": ["src/*.ts", "src/**/*.ts", "src/**/*.vue", "__tests__/**/*.ts", "__tests__/*.ts"]
+}

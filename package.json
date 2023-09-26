@@ -1,0 +1,44 @@
+{
+  "name": "revogrid-test",
+  "version": "1.0.0",
+  "description": "RevoGrid Test",
+  "main": "index.js",
+  "license": "UNLICENSED",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "packages/@types/*"
+  ],
+  "scripts": {
+    "_prettier": "prettier \"**/*.{js,json,ts,vue,html,scss,css,sass}\"",
+    "build": "lerna run build --stream",
+    "build:production": "lerna run build:production --stream",
+    "clean": "git clean -dfx",
+    "format:prettier": "yarn _prettier --write",
+    "lint": "eslint . --ext .ts,.js,.vue,.json --max-warnings=0",
+    "lint:format": "yarn lint:format:prettier",
+    "lint:format:prettier": "yarn _prettier --list-different",
+    "postinstall": "yarn build",
+    "test": "yarn lint && yarn lint:format && yarn test:jest"
+  },
+  "devDependencies": {
+    "@types/prettier": "^2",
+    "@types/sass": "^1",
+    "@types/shelljs": "^0",
+    "@types/yargs": "^17",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.13.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.6.0",
+    "lerna": "^4.0.0",
+    "prettier": "^2.6.2",
+    "sass": "^1.50.1",
+    "shelljs": "^0.8.4",
+    "typescript": "4.6.3",
+    "vue-eslint-parser": "^8.3.0",
+    "yargs": "^17.3.0"
+  }
+}

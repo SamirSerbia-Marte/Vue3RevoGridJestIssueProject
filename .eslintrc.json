@@ -1,0 +1,79 @@
+{
+  "root": true,
+  "ignorePatterns": [
+    "node_modules/",
+    "modules/",
+    "dist/",
+    "releases/",
+    "build/",
+    "coverage/",
+    "@types/",
+    "public/",
+    "code-coverage-results/"
+  ],
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true
+  },
+  "extends": [
+    "plugin:vue/vue3-recommended",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "globals": {
+    "defineProps": "readonly",
+    "defineEmits": "readonly",
+    "defineExpose": "readonly",
+    "withDefaults": "readonly"
+  },
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser",
+    "sourceType": "module"
+  },
+  "overrides": [
+    {
+      "files": ["**/__tests__/**.{j,t}s?(x)"],
+      "env": {
+        "jest": true
+      }
+    },
+    {
+      "files": ["*.js"],
+      "rules": {
+        "no-unused-vars": "warn",
+        "no-undef": "warn",
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ],
+  "rules": {
+    "@typescript-eslint/no-empty-function": ["error", { "allow": ["arrowFunctions"] }],
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-inferrable-types": ["error", { "ignoreParameters": true }],
+    "@typescript-eslint/no-namespace": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-unused-vars": [2, { "args": "all", "argsIgnorePattern": "^_" }],
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "no-extra-boolean-cast": "off",
+    "no-unused-vars": "off",
+    "vue/html-self-closing": [
+      "warn",
+      {
+        "html": {
+          "void": "any",
+          "normal": "never",
+          "component": "always"
+        }
+      }
+    ],
+    "vue/multi-word-component-names": "off",
+    "vue/no-multiple-template-root": "off",
+    "vue/no-v-html": "off",
+    "vue/no-v-model-argument": "off",
+    "vue/script-setup-uses-vars": "error"
+  }
+}

@@ -1,0 +1,8 @@
+# Editor directories and files
+*.bak
+*.njsproj
+*.ntvs*
+*.orig
+*.sln
+*.suo
+node_modules/

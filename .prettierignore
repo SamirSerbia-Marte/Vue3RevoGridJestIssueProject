@@ -1,0 +1,10 @@
+.config/
+.yarn/
+.vscode/
+dist/
+/modules/
+releases/
+build/
+coverage/
+public/
+code-coverage-results/
